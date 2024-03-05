@@ -1,0 +1,80 @@
+{
+  "calendlyGetUser": {
+    "schema": {
+      "method": "GET",
+      "host": "api.calendly.com",
+      "path": "/users/me",
+      "headers": {
+        "Authorization": "Bearer <%=access_token%>",
+        "Content-Type": "application/json"
+      }
+    },
+    "options": {
+      "retryDelay": 1000,
+      "oauth": "calendly"
+    }
+  },
+  "calendlyListSchedules": {
+    "schema": {
+      "method": "GET",
+      "host": "api.calendly.com",
+      "path": "/scheduled_events?<%= context.query %>&user=<%= context.user %>",
+      "headers": {
+        "Authorization": "Bearer <%=access_token%>",
+        "Content-Type": "application/json"
+      },
+      "query": {
+        "invitee_email": "<%= context.invitee_email %>"
+      }
+    },
+    "options": {
+      "retryDelay": 1000,
+      "oauth": "calendly"
+    }
+  },
+  "calendlyEventDetails": {
+    "schema": {
+      "method": "GET",
+      "host": "api.calendly.com",
+      "path": "/scheduled_events/<%= context.uuid %>/invitees",
+      "headers": {
+        "Authorization": "Bearer <%=access_token%>",
+        "Content-Type": "application/json"
+      }
+    },
+    "options": {
+      "retryDelay": 1000,
+      "oauth": "calendly"
+    }
+  },
+  "calendlyDeleteSchedule": {
+    "schema": {
+      "method": "POST",
+      "host": "api.calendly.com",
+      "path": "/scheduled_events/<%= context.uuid %>/cancellation",
+      "headers": {
+        "Authorization": "Bearer <%=access_token%>",
+        "Content-Type": "application/json"
+      }
+    },
+    "options": {
+      "retryDelay": 1000,
+      "oauth": "calendly"
+    }
+  },
+  "getDealContact": {
+    "schema": {
+      "method": "GET",
+      "protocol": "https",
+      "host": "<%= current_host.endpoint_urls.freshworks_crm %>",
+      "path": "/crm/sales/api/deals/<%= context.deal_id %>?include=contacts",
+      "headers": {
+        "Authorization": "Token token=<%= iparam.api_key %>",
+        "Content-Type": "application/json"
+      }
+    },
+    "options": {
+      "retryDelay": 1000
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "platform-version": "3.0",
+  "modules": {
+    "support_ticket": {
+      "location": {
+        "ticket_sidebar": {
+          "url": "index.html",
+          "icon": "calendly_icon.svg"
+        }
+      }
+    },
+    "service_ticket": {
+      "location": {
+        "ticket_sidebar": {
+          "url": "index.html",
+          "icon": "calendly_icon.svg"
+        }
+      }
+    },
+    "deal": {
+      "location": {
+        "deal_entity_menu": {
+          "url": "index.html",
+          "icon": "calendly_icon.svg"
+        }
+      }
+    },
+    "chat_conversation": {
+      "location": {
+        "conversation_user_info": {
+          "url": "index.html",
+          "icon": "calendly_icon.svg"
+        }
+      }
+    },
+    "common": {
+      "requests": {
+        "calendlyGetUser": {},
+        "calendlyListSchedules": {},
+        "calendlyEventDetails": {},
+        "calendlyDeleteSchedule": {},
+        "getDealContact": {}
+      }
+    }
+  },
+  "engines": {
+    "node": "18.16.1",
+    "fdk": "9.1.0"
+  }
+}

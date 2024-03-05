@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Book Event</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script async src="https://cdn.freshdev.io/assets/app-client@2.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+  </head>
+  <body style="height: 100vh">
+    <div class="contact-list-wrapper">
+      <fw-select
+        id="contact-list"
+        label="Select contacts to add in meeting"
+        no-data-text="Type to search.."
+        not-found-text="Contact Not Available"
+        placeholder="Your choices"
+        hint-text="Select multiple options"
+        options-variant="avatar"
+        tag-variant="avatar"
+        multiple
+      >
+      </fw-select>
+      <fw-button id="book-event"> Next </fw-button>
+    </div>
+    <fw-skeleton variant="rect" height="100%" id="booking-loader"></fw-skeleton>
+    <fw-toast id="type_toast"></fw-toast>
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+    ></script>
+    <script defer src="../scripts/booking.js"></script>
+    <script defer src="../scripts/data.js"></script>
+    <script
+      async
+      type="module"
+      src="https://unpkg.com/@freshworks/crayons@3/dist/crayons/crayons.esm.js"
+    ></script>
+    <script
+      async
+      nomodule
+      src="https://unpkg.com/@freshworks/crayons@3/dist/crayons/crayons.js"
+    ></script>
+  </body>
+</html>

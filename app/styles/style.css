@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*::before {
+  box-sizing: inherit;
+}
+
+.main {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.events-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.events-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#apply-changes {
+  width: fit-content;
+  justify-self: end;
+}
+.events-wrapper {
+  width: 100%;
+  display: grid;
+  gap: 20px;
+}
+
+.event-row {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
